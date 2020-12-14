@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>web大作业</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+		}
+		body{
+			background-color:#F8F8F8;
+		}
+		.picture{
+			width:100%;
+			position: absolute;
+			height:400px;
+		}
+		ul,li{
+			list-style:none;
+		}
+		.box{
+			width: 100%;			
+			height: 400px;
+			position:relative;  /*子绝父相:孩子绝对定位，父亲相对定位*/
+			overflow:hidden;
+		}
+		.img1{
+			height:400px;
+			width:100%;
+		}
+		#content{
+			background-color:white;
+			color:black;
+			height:40px;
+			position:relative;
+		}
+		#lenovo{
+			height:40px;
+			width:100px;
+			left:0px;
+		}
+		.navigate ul li{
+			display:inline-block;
+			cursor:pointer;
+			line-height:40px;
+			font-family:'宋体';
+		}
+		.navigate{
+			position:absolute;
+			left:150px;
+			top:0px;
+		}
+		.navigate ul li:hover{
+			color:gray;
+			font-style: italic;
+			font-weight:bold;
+		}
+		.navigate ul li.nav{
+			margin-right:50px;
+		}
+		.search{
+			height:15px;
+			width:20px;
+			display:inline-block;
+			position:absolute;
+			top:10px;
+			left:800px;
+			cursor:pointer;
+		}
+		.text1{
+			position:absolute;
+			top:0px;
+			left:500px;
+			height:35px;
+			width:500px;
+			font-size:20px;
+			border:0;
+			outline:0;
+		}
+		.text{
+			display:none;
+		}
+		.search1{
+			position:absolute;
+			top:10px;
+			left:470px;
+			height:15px;
+			width:20px;
+		}
+		.flase{
+			position:absolute;
+			top:10px;
+			left:1100px;
+			height:15px;
+			width:20px;
+			cursor:pointer;
+		}
+		.res{
+			position:absolute;
+			background-color:white;
+			width:300px;
+			height:300px;
+			display:none;
+			cursor:pointer;
+			top:10%;
+			left:35%;
+			padding:40px;
+		}
+		.rec{
+			position:absolute;
+			top:10px;
+			left:900px;
+			display:inline-block;
+			width:75px;
+		}
+		.reg{
+			position:absolute;
+			top:10px;
+			left:950px;
+			display:inline-block;
+			width:50px;
+		}
+		h2{
+			text-align:center;
+			padding:20px;
+		}
+		.form1{
+			width:300px;
+			height:50px;
+			font-size:25px;
+
+		}
+		form p{
+			height:20px;
+		}
+		.btn{
+			width:300px;
+			height:50px;
+			color:white;
+			background-color:red;
+			border:0px none;
+			outline:none;
+			cursor:pointer;
+		}
+		.tab{
+			margin:0px auto;
+			width:810px;
+			height:50px;
+			background-color:#EEEEEE;
+			text-align:center;
+			font-weight:bold;
+			font-size:10px;
+		}
+		.direction{
+			width:10px;
+			height:10px;
+			display:none;
+		}
+		tr td:hover{
+			color:#666666;
+			font-weight:bold;
+		}
+		.div1{
+			width:500px;
+			height:0px;
+			margin:0px auto;
+		}
+		.pic{
+			width:30px;
+			height:30px;
+			padding:40px;
+		}
+		.span1{
+			font-size:10px;
+		}
+		.div2{
+			width:800px;
+			height:135px;
+			margin:0px auto;
+			display:none;
+		}
+		.pa{
+			width:30px;
+			height:30px;
+			padding-top:30px;
+			padding-left:70px;
+			padding-right:70px;
+			padding-bottom:10px;
+			display:none;
+		}
+		.span2{
+			font-size:10px;
+			padding-top:20px; 
+			padding-bottom:50px; 
+			padding-left:60px;
+			padding-right:70px;
+			display:none;
+		}
+		.false1{
+			cursor:pointer;
+			height:15px;
+			width:20px;
+		}
+		#show{
+			width: 820px;
+			height: 420px;
+			margin: 0px auto;
+			position: relative;
+		}
+		#pic4{
+			width:405px;
+			height:400px;
+			float:left;
+		}
+		#pic5{
+			width:410px;
+			height:205px;
+			float:left;
+		}
+		#pic6{
+			width:405px;
+			height:200px;
+			float:left;
+		}
+		.clear::after {
+  			content: '';
+  			height: 0;
+  			display: block;
+  			clear: both;
+		}
+		#pic1{
+			width:395px;
+			height:400px;
+		}
+		#pic2{
+			width:395px;
+			height:200px;
+		}
+		#pic3{
+			width:395px;
+			height:200px;
+		}
+		.bla{
+			height:300px;
+			width:100%;
+			background-color:#696969;
+			margin:0px auto;
+		}
+		.blabox{
+			height:250px;
+			width:800px;
+			margin:0px auto;
+		}
+		.bla1{
+			font-weight:bolder;
+			color:white;
+			display:block;
+			padding:30px;
+			float:left;
+			margin:10px auto;
+		}
+		.bla1 ul li{
+			padding:10px;
+		}
+		.bla2{
+			font-weight:bolder;
+			color:white;
+			display:block;
+			padding:30px;
+			float:left;
+			margin:10px auto;
+		}
+		.bla2 ul li{
+			padding:10px;
+		}
+		.bla3{
+			font-weight:bolder;
+			color:black;
+			text-align:center;
+		}
+		.clear::after {
+  			content: '';
+  			height: 0;
+  			display: block;
+  			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<img src="image/lenovo.png" alt="" id="lenovo"/>
+		<div class="navigate">
+			<ul>
+				<li class="nav"><a herf="#">商城</a></li>
+				<li class="nav"><a herf="#">企业购</a></li>
+				<li class="nav"><a herf="#">服务</a></li>
+				<li class="nav"><a herf="#">会员</a></li>
+				<li class="nav"><a herf="#">社区</a></li>
+				<li class="nav"><a herf="#">门店</a></li>
+				<li class="nav"><a herf="#">品牌</a></li>
+			</ul>
+			<img src="image/search.png" alt="" class="search" onclick="sea()"/>
+			<span onclick="record()" class="rec">登录</span>
+			<span onclick="register()" class="reg">注册</span>
+		</div>
+		<div class="text">
+			<img src="image/search.png" alt="" class="search1"/>
+			<input type="text" name="" placeholder="12.12购物狂欢节" class="text1"/>
+			<img src="image/false.png" alt="" class="flase" onclick="ssea()"/>
+		</div>
+	</div>
+	<div class="box">
+		<div class="picture">
+			<div class="picture1"><img src="image/picture01.jpg" alt="" class="img1"/></div>
+			<div class="picture1"><img src="image/picture02.jpg" alt="" class="img1"/></div>
+			<div class="picture1"><img src="image/picture03.jpg" alt="" class="img1"/></div>
+			<div class="picture1"><img src="image/picture04.jpg" alt="" class="img1"/></div>
+			<div class="picture1"><img src="image/picture05.jpg" alt="" class="img1"/></div>
+		</div>
+	</div>
+	<div class="res">
+		<img src="image/false.png" alt="" class="false1" onclick="sse()"/>
+		<h2>联想会员登录</h2>
+		<form>
+			<input type="text" name="" placeholder="输入手机号码" class="form1"/>
+			<p></p>
+			<input type="password" name="" placeholder="输入密码" class="form1"/>
+			<p></p>
+			<input type="button" name="登录" value="登录" class="btn" />
+		</form>
+	</div>
+	<table class="tab">
+		<tr>
+			<td onmouseover="onc(this)" onmouseout="onc1(this)" onclick="onc3()">个人及家庭产品&nbsp;<img src="image/direction.png" alt="" class="direction"/></td>
+			<td onmouseover="onc(this)" onmouseout="onc1(this)" onclick="onc2()">中小企业产品&nbsp;<img src="image/direction.png" alt="" class="direction"/></td>
+			<td onmouseover="onc(this)" onmouseout="onc1(this)">政企大客户产品&nbsp;<img src="image/direction.png" alt="" class="direction"/></td>
+			<td onmouseover="onc(this)" onmouseout="onc1(this)">数据中心产品&nbsp;<img src="image/direction.png" alt="" class="direction"/></td>
+			<td onmouseover="onc(this)" onmouseout="onc1(this)">行业智能软件产品&nbsp;<img src="image/direction.png" alt="" class="direction"/></td>
+		</tr>
+	</table>
+	<table class="div1">
+		<tr>
+			<td><img src="image/a.png" class="pic"/></td>
+			<td><img src="image/b.png" class="pic"/></td>
+			<td><img src="image/c.png" class="pic"/></td>
+			<td><img src="image/d.png" class="pic"/></td>
+			<td><img src="image/e.png" class="pic"/></td>
+			<td><img src="image/f.png" class="pic"/></td>
+			<td><img src="image/g.png" class="pic"/></td>
+		</tr>
+		<tr class="spa">
+			<td><span class="span1">Lenovo&nbsp;台式机</span></td>
+			<td><span class="span1">Lenovo&nbsp;笔记本</span></td>
+			<td><span class="span1">ThinkPad&nbsp;电脑</span></td>
+			<td><span class="span1">网课平板</span></td>
+			<td><span class="span1">手机</span></td>
+			<td><span class="span1">选件/服务</span></td>
+			<td><span class="span1">智能产品/打印机</span></td>
+		</tr>
+	</table>
+	<div class="div2">
+		<img src="image/h.png" class="pa"/>
+		<img src="image/i.png" class="pa"/>
+		<img src="image/j.png" class="pa"/>
+		<img src="image/k.png" class="pa"/>
+		<div class="spa1">
+			<span class="span2">扬天</span>
+			<span class="span2">ThinkPad</span>
+			<span class="span2">配件/办公</span>
+			<span class="span2">打印机</span>
+		</div>
+	</div>
+	<div id="show" class="clear">
+		<div id="pic4"><img src="image/123.jpg" id="pic1"/></div>
+		<div id="pic5"><img src="image/124.png" id="pic2"/></div>
+		<div id="pic6"><img src="image/125.jpg" id="pic3"/></div>
+	</div>
+	<div class="bla" class="clear">
+		<div class="blabox">
+			<div class="bla1">
+				<ul>
+					<li>关于联想</li>
+					<li>联想商城</li>
+					<li>联想服务</li>
+					<li>联想网站群</li>
+				</ul>
+			</div>
+			<div class="bla2">
+				<ul>
+					<li>投资者关系</li>
+					<li>加入我们</li>
+					<li>联系我们</li>
+					<li>参观联想</li>
+				</ul>
+			</div>	
+		</div>
+		<div class="bla3">
+			个人及家庭产品: 400 990 8888
+				9:00-18:00 (周一至周日)
+			中小型企业产品: 400 100 6000
+				9:00-18:00 (周一至周五)
+			政企大客户产品: 400 813 6161
+				9:00-18:00 (周一至周五)
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function sea(){
+		document.getElementsByClassName("navigate")[0].style.display="none";
+		document.getElementsByClassName("text")[0].style.display="block";
+	}
+	function ssea(){
+		document.getElementsByClassName("navigate")[0].style.display="block";
+		document.getElementsByClassName("text")[0].style.display="none";
+	}
+	function record(){
+		document.getElementsByClassName("res")[0].style.display="block";
+	}
+	function sse(){
+		document.getElementsByClassName("res")[0].style.display="none";
+	}
+	window.onload=function(){
+		var lunboing=document.getElementsByClassName("picture1");
+		var n=0;
+		function lunbofun(){
+			for(var i=0;i<lunboing.length;i++){
+				lunboing[i].style.display="none";
+			}
+			lunboing[n].style.display="block";
+		}
+		function start(){
+			n++;
+			if(n>=lunboing.length){
+				n=0;
+			}
+			lunbofun();
+		}
+		setInterval(start,3000);
+	}
+	function onc(that){
+		that.lastElementChild.style.display="inline-block";
+	}
+	var picture=document.getElementById("pic1");
+	picture.setAttribute("onmouseover","task1()");
+	picture.setAttribute("onmouseout","task2()");
+	function task1(){
+		picture.style.width="404px";
+		picture.style.height="404px";
+	}
+	function task2(){
+		picture.style.width="395px";
+		picture.style.height="400px";
+	}
+	picture.setAttribute("onclick","task()");
+	function task(){
+		window.open("https://shop.lenovo.com.cn/mobile/index.html?pmf_group=in-push&pmf_medium=geren-zuoyi&pmf_source=Z00016651T000&_ga=2.29830264.611426025.1607594337-1331408342.1607594337");
+	}
+	var picture1=document.getElementById("pic2");
+	picture1.setAttribute("onmouseover","task3()");
+	picture1.setAttribute("onmouseout","task4()");
+	function task3(){
+		picture1.style.width="404px";
+		picture1.style.height="204px";
+	}
+	function task4(){
+		picture1.style.width="400px";
+		picture1.style.height="200px";
+	}
+	picture1.setAttribute("onclick","task7()");
+	function task7(){
+		window.open("https://shop.lenovo.com.cn/mobile/index.html?pmf_group=in-push&pmf_medium=geren-zuoyi&pmf_source=Z00016651T000&_ga=2.29830264.611426025.1607594337-1331408342.1607594337");
+	}
+	var picture2=document.getElementById("pic3");
+	picture2.setAttribute("onmouseover","task5()");
+	picture2.setAttribute("onmouseout","task6()");
+	function task5(){
+		picture2.style.width="404px";
+		picture2.style.height="200px";
+	}
+	function task6(){
+		picture2.style.width="400px";
+		picture2.style.height="195px";
+	}
+	picture2.setAttribute("onclick","task8()");
+	function task8(){
+		window.open("https://shop.lenovo.com.cn/mobile/index.html?pmf_group=in-push&pmf_medium=geren-zuoyi&pmf_source=Z00016651T000&_ga=2.29830264.611426025.1607594337-1331408342.1607594337");
+	}
+	function onc1(that){
+		that.lastElementChild.style.display="none";
+	}
+	function onc2(){
+		for(var i=0;i<7;i++){
+			document.getElementsByClassName("pic")[i].style.display="none";
+			document.getElementsByClassName("span1")[i].style.display="none";
+		}
+		document.getElementsByClassName("div2")[0].style.display="block";
+		for(var j=0;j<4;j++){
+			document.getElementsByClassName("pa")[j].style.display="inline-block";
+			document.getElementsByClassName("span2")[j].style.display="inline-block";
+		}
+	}
+	function onc3(){
+		for(var i=0;i<7;i++){
+			document.getElementsByClassName("pic")[i].style.display="inline-block";
+			document.getElementsByClassName("span1")[i].style.display="inline-block";
+		}
+		document.getElementsByClassName("div2")[0].style.display="none";
+		for(var j=0;j<4;j++){
+			document.getElementsByClassName("pa")[j].style.display="none";
+			document.getElementsByClassName("span2")[j].style.display="none";
+		}
+	}
+</script>
+</html>
